@@ -13,14 +13,6 @@ engines:
     enabled: false
 ratings:
   paths:
-  - Gemfile.lock
-  - "**.erb"
-  - "**.rb"
   - "**.coffee"
   - "gulp-tasks/**/*.js"
   - "gulpfile.js"
-  - "**.scss"
-exclude_paths:
-- config/
-- polyfills/
-- src/style/vendor/
