@@ -20,6 +20,11 @@
     "moment": "^2.12.0",
     "moment-timezone": "^0.5.3",
     "angular-cookies": "^1.5.3",
-    "angular-resource": "^1.5.3"
+    "angular-resource": "^1.5.3",
+    "satellizer": "^0.14.0",
+    "angulartics": "^1.0.3",
+    "angulartics-google-analytics": "^0.1.4",
+    "guclink-www-shims": "ah450/guclink-www-shims",
+    "lodash": "^4.9.0"
   }
 }

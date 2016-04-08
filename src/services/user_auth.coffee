@@ -1,5 +1,6 @@
 angular.module 'guclinkAuthModules'
-  .factory 'UserAuth', ($auth, $q, configurations, localStorageService, User) ->
+  .factory 'UserAuth', ($auth, $q, authConfigurations,
+  $cookies, User) ->
     class UserService
       constructor: ->
 
@@ -9,13 +10,13 @@ angular.module 'guclinkAuthModules'
 
       login: (info, expiration) ->
         deferred = $q.defer()
-        configurations.then (config) =>
+        authConfigurations.then (config) =>
           expiration ||= config.default_token_exp
           info.expiration = expiration
           $auth.login({token: info})
             .then (response) =>
               @currentUserData = response.data.user
-              localStorageService.set 'currentUser', @currentUserData
+              $cookies.putObject 'currentUser', @currentUserData
               @currentUser = new User @currentUserData
               deferred.resolve response
             .catch (response) ->
@@ -28,7 +29,7 @@ angular.module 'guclinkAuthModules'
         $auth.signup data
           .then (response) =>
             @currentUserData = response.data.user
-            localStorageService.set 'currentUser', @currentUserData
+            $cookies.putObject 'currentUser', @currentUserData
             @currentUser = new User @currentUserData
             return response
 
@@ -36,7 +37,7 @@ angular.module 'guclinkAuthModules'
       logout: ->
         @currentUser = undefined
         @currentUserData = undefined
-        localStorageService.remove 'currentUser'
+        $cookies.remove 'currentUser'
         if @signedIn
           $auth.logout()
 
@@ -44,7 +45,7 @@ angular.module 'guclinkAuthModules'
         if not angular.isUndefined @currentUser
           return @currentUser
         else
-          @currentUser = new User localStorageService.get 'currentUser'
+          @currentUser = new User $cookies.getObject 'currentUser'
 
       @property 'user',
         get: ->
