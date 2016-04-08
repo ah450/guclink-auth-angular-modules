@@ -1,0 +1,25 @@
+{
+  "name": "guclink-auth-angular-modules",
+  "description": "Authentication modules for guclink web apps",
+  "main": "gulpfile.js",
+  "authors": [
+    "Ahmed H. Ismail"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/ah450/guclink-auth-angular-modules",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "guclink-constants": "ah450/guclink-constants",
+    "angular-mocks": "^1.5.3",
+    "moment": "^2.12.0",
+    "moment-timezone": "^0.5.3",
+    "angular-cookies": "^1.5.3",
+    "angular-resource": "^1.5.3"
+  }
+}
