@@ -75,13 +75,12 @@ var options = minimist(process.argv.slice(2), {
 })
 
 gulp.task('production-helper', ['create-dirs', 'bower'], function() {
-  var cssStream = css.minifyCss(css.processSass());
-  var scriptStream = scripts.processScripts().pipe(ngAnnotate()).pipe(uglify());
-  var dependenciesStream = scripts.processDeps().pipe(uglify());
-  var routesStream = scripts.processRoutes().pipe(uglify({mangle: false}));
+  var cssStream = css.processSass();
+  var scriptStream = scripts.processScripts();
+  var dependenciesStream = scripts.processDeps();
   var assetsStream = assets.processAssets();
   var polyfillsStream = polyfills.processPolyfills();
-  var js = merge(dependenciesStream, scriptStream, routesStream)
+  var js = merge(dependenciesStream, scriptStream)
     .pipe(concat('app.js'));
   var streams = merge([cssStream, js, assetsStream, polyfillsStream]);
   return streams
