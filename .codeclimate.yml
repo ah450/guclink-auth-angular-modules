@@ -1,6 +1,6 @@
 engines:
   bundler-audit:
-    enabled: true
+    enabled: false
   csslint:
     enabled: false
   coffeelint:
@@ -10,7 +10,7 @@ engines:
   fixme:
     enabled: true
   scss-lint:
-    enabled: true
+    enabled: false
 ratings:
   paths:
   - Gemfile.lock
