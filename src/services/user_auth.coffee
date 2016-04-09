@@ -8,6 +8,7 @@ angular.module 'guclinkAuthModules'
         get: ->
           $auth.isAuthenticated()
 
+      # Expiration is in hours
       login: (info, expiration) ->
         deferred = $q.defer()
         authConfigurations.then (config) =>

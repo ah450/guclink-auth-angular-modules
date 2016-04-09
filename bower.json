@@ -15,7 +15,7 @@
     "tests"
   ],
   "devDependencies": {
-    "guclink-constants": "ah450/guclink-constants",
+    "guclink-constants": "ah450/guclink-constants#dev",
     "angular-mocks": "^1.5.3",
     "moment": "^2.12.0",
     "moment-timezone": "^0.5.3",
@@ -27,6 +27,6 @@
     "guclink-www-shims": "ah450/guclink-www-shims",
     "lodash": "^4.9.0",
     "angular": "^1.5.3",
-    "guclink-satellizer-decorator": "ah450/guclink-satellizer-decorator"
+    "guclink-satellizer-decorator": "ah450/guclink-satellizer-decorator#dev"
   }
 }
