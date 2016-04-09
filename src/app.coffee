@@ -9,3 +9,10 @@ angular.module 'guclinkAuthModules'
       path: '/'
       domain: 'guclink.in'
       secure: true
+angular.module 'guclinkAuthModules'
+  .config ($authProvider, AUTH_BASE_URL) ->
+    $authProvider.httpInterceptor = true
+    $authProvider.loginOnSignup = true
+    $authProvider.baseUrl = AUTH_BASE_URL
+    $authProvider.signupUrl = 'users.json'
+    $authProvider.loginUrl = 'tokens.json'

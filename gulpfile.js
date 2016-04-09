@@ -81,18 +81,13 @@ gulp.task('production-helper', ['create-dirs', 'bower'], function() {
   var assetsStream = assets.processAssets();
   var polyfillsStream = polyfills.processPolyfills();
   var js = merge(dependenciesStream, scriptStream)
-    .pipe(concat('app.js'));
+    .pipe(concat('guclink-auth-angular-modules.js'));
   var streams = merge([cssStream, js, assetsStream, polyfillsStream]);
   return streams
     .pipe(gulp.dest(options.dest));
 });
 
-gulp.task('production', ['production-helper'], function () {
-  var src = [options.dest, '**', '*.{html,css,js,eot,svg,ttf,otf,json}'].join('/');
-  return gulp.src(src)
-    .pipe(gzip({ gzipOptions: { level: 9 } }))
-    .pipe(gulp.dest(options.dest));
-});
+gulp.task('production', ['production-helper']);
 
 
 gulp.task('server', ['build'], function() {
