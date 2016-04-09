@@ -25,6 +25,7 @@
     "angulartics": "^1.0.3",
     "angulartics-google-analytics": "^0.1.4",
     "guclink-www-shims": "ah450/guclink-www-shims",
-    "lodash": "^4.9.0"
+    "lodash": "^4.9.0",
+    "angular": "^1.5.3"
   }
 }

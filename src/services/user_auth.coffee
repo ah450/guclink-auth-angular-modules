@@ -42,7 +42,9 @@ angular.module 'guclinkAuthModules'
           $auth.logout()
 
       getUser: ->
-        if not angular.isUndefined @currentUser
+        if not @signedIn
+          return undefined
+        else if not angular.isUndefined @currentUser
           return @currentUser
         else
           @currentUser = new User $cookies.getObject 'currentUser'
