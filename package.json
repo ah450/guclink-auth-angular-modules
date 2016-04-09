@@ -1,6 +1,6 @@
 {
   "name": "guclink-auth-angular-modules",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Authentication modules for guclink web apps",
   "main": "gulpfile.js",
   "scripts": {

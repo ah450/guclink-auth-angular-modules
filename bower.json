@@ -1,7 +1,7 @@
 {
   "name": "guclink-auth-angular-modules",
   "description": "Authentication modules for guclink web apps",
-  "main": "gulpfile.js",
+  "main": "dist/guclink-auth-angular-modules.js",
   "authors": [
     "Ahmed H. Ismail"
   ],
