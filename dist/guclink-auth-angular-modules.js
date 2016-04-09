@@ -169,6 +169,39 @@
 }).call(this);
 
 (function() {
+  angular.module('guclinkAuthModules').factory('UsersResource', function($resource, AuthEndpoints) {
+    var usersResourceActions, usersResourceDefaultParams;
+    usersResourceDefaultParams = {
+      id: '@id'
+    };
+    usersResourceActions = {
+      query: {
+        method: 'GET',
+        isArray: false,
+        cache: true
+      },
+      update: {
+        method: 'PUT',
+        isArray: false,
+        cache: false
+      },
+      create: {
+        method: 'POST',
+        isArray: false,
+        cache: false
+      },
+      "delete": {
+        method: 'DELETE',
+        isArray: false,
+        cache: false
+      }
+    };
+    return $resource(AuthEndpoints.users.resourceUrl, usersResourceDefaultParams, usersResourceActions);
+  });
+
+}).call(this);
+
+(function() {
   angular.module('guclinkAuthModules').factory('redirect', function() {
     var Redirect;
     Redirect = (function() {
@@ -274,39 +307,6 @@
 
     })();
     return new UserService;
-  });
-
-}).call(this);
-
-(function() {
-  angular.module('guclinkAuthModules').factory('UsersResource', function($resource, AuthEndpoints) {
-    var usersResourceActions, usersResourceDefaultParams;
-    usersResourceDefaultParams = {
-      id: '@id'
-    };
-    usersResourceActions = {
-      query: {
-        method: 'GET',
-        isArray: false,
-        cache: true
-      },
-      update: {
-        method: 'PUT',
-        isArray: false,
-        cache: false
-      },
-      create: {
-        method: 'POST',
-        isArray: false,
-        cache: false
-      },
-      "delete": {
-        method: 'DELETE',
-        isArray: false,
-        cache: false
-      }
-    };
-    return $resource(AuthEndpoints.users.resourceUrl, usersResourceDefaultParams, usersResourceActions);
   });
 
 }).call(this);

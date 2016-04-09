@@ -37,16 +37,7 @@ function processDeps() {
         'libs/satellizer/*.js',
         'libs/**/*.js',
         ], { base: './'}));
-  var modernizrSrc = gulp.src('src/modernize.coffee')
-    .pipe(coffeelint())
-    .pipe(coffeelint.reporter(stylishCoffee))
-    .pipe(coffee().on('error', gutil.log))
-    .pipe(modernizr());
-  var modernizrTests = gulp.src('src/modernize.coffee')
-    .pipe(coffeelint())
-    .pipe(coffeelint.reporter(stylishCoffee))
-    .pipe(coffee().on('error', gutil.log));
-  return merge(libs, modernizrSrc, modernizrTests);
+  return libs;
 }
 
 
