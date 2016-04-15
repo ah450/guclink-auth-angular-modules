@@ -27,6 +27,7 @@
     "guclink-www-shims": "ah450/guclink-www-shims",
     "lodash": "^4.9.0",
     "angular": "^1.5.3",
-    "guclink-satellizer-decorator": "ah450/guclink-satellizer-decorator#dev"
+    "guclink-satellizer-decorator": "ah450/guclink-satellizer-decorator#dev",
+    "jquery": "^2.2.3"
   }
 }
