@@ -5,4 +5,5 @@ angular.module 'guclinkAuthModules'
       link: ($scope, element) ->
         element.click ->
           UserAuth.logout()
+          $scope.$emit 'logout'
           $scope.$apply()
