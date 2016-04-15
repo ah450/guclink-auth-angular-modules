@@ -7,7 +7,7 @@ angular.module 'guclinkAuthModules'
   .config ($cookiesProvider) ->
     $cookiesProvider.defaults =
       path: '/'
-      domain: 'guclink.in'
+      domain: '.guclink.in'
       secure: true
 angular.module 'guclinkAuthModules'
   .config ($authProvider, AUTH_BASE_URL) ->
