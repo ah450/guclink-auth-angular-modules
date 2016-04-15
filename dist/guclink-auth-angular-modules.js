@@ -50,6 +50,22 @@
 }).call(this);
 
 (function() {
+  angular.module('guclinkAuthModules').directive('logout', function(UserAuth) {
+    var directive;
+    return directive = {
+      restrict: 'A',
+      link: function($scope, element) {
+        return element.click(function() {
+          UserAuth.logout();
+          return $scope.$apply();
+        });
+      }
+    };
+  });
+
+}).call(this);
+
+(function() {
   var slice = [].slice;
 
   angular.module('guclinkAuthModules').factory('User', function(UsersResource, moment) {
