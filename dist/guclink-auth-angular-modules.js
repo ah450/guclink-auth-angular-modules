@@ -57,6 +57,7 @@
       link: function($scope, element) {
         return element.click(function() {
           UserAuth.logout();
+          $scope.$emit('logout');
           return $scope.$apply();
         });
       }
